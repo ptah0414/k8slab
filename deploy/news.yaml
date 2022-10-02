@@ -20,12 +20,12 @@ spec:
        ports: 
        - containerPort: 80
        volumeMounts:
-       - name: defaultvol
+       - name: newsvol
          mountPath: /usr/share/nginx/html
      volumes:
-     - name: defaultvol
+     - name: newsvol
        configMap:
-         name: defaultcm
+         name: newscm
 ---
 apiVersion: v1
 kind: Service

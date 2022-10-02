@@ -20,12 +20,12 @@ spec:
        ports: 
        - containerPort: 80
        volumeMounts:
-       - name: defaultvol
+       - name: shopvol
          mountPath: /usr/share/nginx/html
      volumes:
-     - name: defaultvol
+     - name: shopvol
        configMap:
-         name: defaultcm
+         name: shopcm
 ---
 apiVersion: v1
 kind: Service
