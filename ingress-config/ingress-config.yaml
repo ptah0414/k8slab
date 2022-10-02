@@ -1,0 +1,33 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: rapa
+  name: ingress-nginx
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: default # 서비스 이름 
+              port:
+                number: 80 # nodePort Service의 포트 번호 
+        - path: /shop
+          pathType: Prefix
+          backend:
+            service:
+              name: shop # 서비스 이름 
+              port:
+                number: 80 # nodePort Service의 포트 번호 
+        - path: /news
+          pathType: Prefix
+          backend:
+            service:
+              name: news # 서비스 이름 
+              port:
+                number: 80 # nodePort Service의 포트 번호 
