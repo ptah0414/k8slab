@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
-#  namespace: rapa
  name: news
 spec:
  replicas: 3
@@ -30,7 +29,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata: 
-  # namespace: rapa 
   name: news
 spec:
  ports:
